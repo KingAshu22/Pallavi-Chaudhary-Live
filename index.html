@@ -3522,7 +3522,7 @@
                         <div class="column one">
                             <div class="top_bar_left clearfix">
                                 <div class=logo><a id=logo href="/"
-                                        title="BeMusician - BeTheme" data-height=60 data-padding=5><img
+                                        title="Pallavi Chaudhary Live" data-height=60 data-padding=5><img
                                             class="logo-main scale-with-grid "
                                             src="Pallavi_Logo.png"
                                             data-height=24 alt=musician><img
@@ -3541,27 +3541,18 @@
                                             <li id=menu-item-7
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item">
                                                 <a
-                                                    href="/"><span>Home</span></a>
+                                                    href="#home"><span>Home</span></a>
                                             </li>
                                             <li id=menu-item-25
                                                 class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                                    href=/me><span>Me</span></a>
+                                                    href="#spotify"><span>Spotify</span></a>
                                             </li>
                                             <li id=menu-item-24
                                                 class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                                    href=/my-music><span>My
-                                                        music</span></a></li>
-                                            <li id=menu-item-23
-                                                class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                                    href=/inspirations><span>Inspirations</span></a>
-                                            </li>
-                                            <li id=menu-item-22
-                                                class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                                    href=/events><span>Events</span></a>
-                                            </li>
+                                                    href="#videos"><span>Videos</span></a></li>
                                             <li id=menu-item-21
                                                 class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                                    href=/contact><span>Contact</span></a>
+                                                    href="#contact"><span>Contact</span></a>
                                             </li>
                                         </ul>
                                     </nav><a class="responsive-menu-toggle " href=#><i class=icon-menu-fine></i></a>
@@ -3579,7 +3570,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mfn-main-slider mfn-rev-slider">
+                <div class="mfn-main-slider mfn-rev-slider" id="home">
                     <p class=rs-p-wp-fix></p> <rs-module-wrap id=rev_slider_1_1_wrapper data-source=gallery
                         style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;max-width:">
                         <rs-module id=rev_slider_1_1 style=display:none; data-version=6.1.2> <rs-slides> <rs-slide
@@ -3628,7 +3619,7 @@
                 <div class=sections_group>
                     <div class=entry-content itemprop=mainContentOfPage>
                         <div class=mfn-builder-content>
-                            <div class="section mcb-section mcb-section-285bfa6c2" style=background-color:#111b20>
+                            <div class="section mcb-section mcb-section-285bfa6c2" id="spotify" style=background-color:#111b20>
                                 <div class="section_wrapper mcb-section-inner">
                                     <div class="wrap mcb-wrap mcb-wrap-49065fcf8 one  valign-top move-up clearfix"
                                         style=margin-top:-80px>
@@ -3649,7 +3640,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="section mcb-section mcb-section-bdce6aed7"
+                            <div id="videos" class="section mcb-section mcb-section-bdce6aed7"
                                 style="padding-top:100px;padding-bottom:60px;background-image:url(assets/home_musician_sectionbg2.png);background-repeat:repeat;background-position:center top">
                                 <div class="section-decoration top"
                                     style=background-image:url(assets/home_musician_decoration1.png);height:103px>
@@ -4133,7 +4124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="section mcb-section mcb-section-e49de5ef8"
+                            <div id="contact" class="section mcb-section mcb-section-e49de5ef8"
                                 style=padding-top:80px;padding-bottom:40px>
                                 <div class="section_wrapper mcb-section-inner">
                                     <div class="wrap mcb-wrap mcb-wrap-42878cc59 one  valign-top clearfix" style>
@@ -4279,13 +4270,13 @@
     
     <script src="/js/core.min.js"
         id="jquery-ui-core-js"></script>
-    <script src="js/tabs.min.js"
+    <script src="/js/tabs.min.js"
         id="jquery-ui-tabs-js"></script>
     <script
         id="mfn-plugins-js-extra">var mfn = { "mobileInit": "1240", "parallax": "translate3d", "responsive": "1", "sidebarSticky": "", "lightbox": { "disable": false, "disableMobile": false, "title": false }, "slider": { "blog": 0, "clients": 0, "offer": 0, "portfolio": 0, "shop": 0, "slider": 0, "testimonials": 0 }, "ajax": "" };</script>
     
-    <script src="js/menu.js" id="mfn-menu-js"></script>
-    <script src="js/scripts.js"
+    <script src="/js/menu.js" id="mfn-menu-js"></script>
+    <script src="/js/scripts.js"
         id="mfn-scripts-js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -4313,6 +4304,30 @@
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get all navigation links that have a "#" in the href attribute
+      var navigationLinks = document.querySelectorAll('a[href^="#"]');
+
+      // Add a click event listener to each navigation link
+      navigationLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          // Get the target section's ID from the link's href attribute
+          var targetId = link.getAttribute('href').slice(1); // Remove the "#" symbol
+
+          // Get a reference to the target section
+          var targetSection = document.getElementById(targetId);
+
+          // Scroll to the target section smoothly
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
