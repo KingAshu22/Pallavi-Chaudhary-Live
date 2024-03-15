@@ -244,3 +244,10 @@ Whatsapp & Call Button
     zoom: 15%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .contact-button {
+    margin-top: 100% !important;
+    zoom: 300%;
+  }
+}
