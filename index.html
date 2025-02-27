@@ -4206,28 +4206,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <script>
-    $(document).ready(function () {
-        $('#contactForm').submit(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                success: function (response) {
-                    // Display success message
-                    $('#modalBody').html('<p>Contact form submitted successfully!</p>');
-                    $('#contactModal').modal('show');
-                },
-                error: function (error) {
-                    // Display failure message
-                    $('#modalBody').html('<p>Failed to submit contact form. Please try again later.</p>');
-                    $('#contactModal').modal('show');
-                }
-            });
-        });
-    });
-</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Get all navigation links that have a "#" in the href attribute
